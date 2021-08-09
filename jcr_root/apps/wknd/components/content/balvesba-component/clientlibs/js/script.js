@@ -3,14 +3,22 @@ $(function () {
     $(document).ready(() => {
         $("#github-users option").each(async (index, option) => {
 
-            if (index == 0)
-                return
+            $('#message').hide()
 
-            var user = $(option).val()
-            const response = await getInfoUser(user)
+            if (index != 0) {
 
-            if (!response.isValid) {
-                $(option).remove()
+                var user = $(option).val()
+                const response = await getInfoUser(user)
+
+                if (!response.isValid) {
+                    $(option).remove()
+                }
+            }
+
+
+            if ($("#github-users option").length == 1) {
+                $('#message').text("Nenhum usuário válido encontrado.")
+                $('#message').show()
             }
         })
     })
