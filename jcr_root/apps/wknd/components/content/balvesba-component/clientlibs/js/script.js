@@ -1,25 +1,26 @@
-$(function () {
+$(() => {
+
+    const MESSAGE_WITHOUT_USERS = "Nenhum usuário válido encontrado."
+    const MESSAGE_WITHOUT_REPOS = "Este usuário não possui repositórios públicos."
 
     $(document).ready(() => {
+
         $("#github-users option").each(async (index, option) => {
 
             $('#message').hide()
 
             if (index != 0) {
-
                 var user = $(option).val()
-                const response = await getInfoUser(user)
+                const response = await getUser(user)
 
                 if (!response.isValid) {
                     $(option).remove()
                 }
             }
 
+            if ($("#github-users option").length == 1)
+                showMessage(MESSAGE_WITHOUT_USERS)
 
-            if ($("#github-users option").length == 1) {
-                $('#message').text("Nenhum usuário válido encontrado.")
-                $('#message').show()
-            }
         })
     })
 
@@ -27,26 +28,25 @@ $(function () {
 
         $('#message').hide()
 
-        var selectedValue = $(this).val();
-        console.log(selectedValue)
+        var selectedValue = $("#github-users option:selected").val();
 
         if (selectedValue == "") {
             $('.second-section').hide()
             return
         }
 
-        var user = await getInfoUser(selectedValue)
-        var repositories = await getRepositoriesUser(selectedValue)
+        var user = await getUser(selectedValue)
+        var repositories = await getRepositories(selectedValue)
 
         user.avatar ? $("#avatar-user").attr("src", user.avatar).show() : $("#avatar-user").hide()
         user.name ? $("#name-user").text(user.name).show() : $("#name-user").hide()
-        user.nickname ? $("#nickname-user").text(`(${user.nickname})`).show() : $("#user.nickname").hide()
+        user.nickname ? $("#nickname-user").text(user.nickname).show() : $("#user.nickname").hide()
         user.url ? $("#url-user").attr("href", user.url).text(user.url).show() : $("#url-user").hide()
 
         $('.second-section').show()
     })
 
-    async function getInfoUser(user) {
+    async function getUser(user) {
         const response = await fetch(`https://api.github.com/users/${user}`, { method: 'GET' })
         const result = await response.json()
 
@@ -64,21 +64,19 @@ $(function () {
         }
     }
 
-    function getRepositoriesUser(user) {
+    function getRepositories(user) {
         $.get(`https://api.github.com/users/${user}/repos`, (data) => {
 
             if (data.length == 0) {
-
                 $('.container-table').hide()
-                $('#message').text('Este usuário não possui repositórios públicos')
-                $('#message').show()
+                showMessage(MESSAGE_WITHOUT_REPOS)
                 return
             }
 
             $('.container-table').show()
             $('#table-repositories').DataTable({
                 destroy: true,
-                data: data,
+                data,
                 columns: [
                     { data: 'name' },
                     { data: 'description' },
@@ -92,6 +90,11 @@ $(function () {
             });
 
         })
+    }
+
+    function showMessage(message) {
+        $('#message').text(message)
+        $('#message').show()
     }
 });
 

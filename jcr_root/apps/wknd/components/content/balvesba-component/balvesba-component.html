@@ -31,7 +31,7 @@
     <h2 class="title-second-section" data-sly-test="${properties.secondStep}">${properties.secondStep}</h2>
     <select id="github-users" name="github-users">
         <option selected="selected" value="">Selecione um usuário</option>
-        <sly data-sly-use.options="${'clientlibs/js/users.js' @ multifieldName='githubUsers'}">
+        <sly data-sly-use.options="${'clientlibs/js/list-users.js' @ multifieldName='githubUsers'}">
             <sly data-sly-list="${options}">
                 <option value="${item.properties.user}">${item.properties.user}</option>
             </sly>

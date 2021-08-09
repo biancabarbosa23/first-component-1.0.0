@@ -1,5 +1,8 @@
 .balvesba-component {
-    @color-white: #fff;
+    @color-black: #000;
+    @color-dark-gray: #a9a9a9;
+    @color-light-gray: #d3d3d3;
+    @color-orange: #FF8000;
     
     .container {
         padding: .5rem 2rem;
@@ -17,8 +20,18 @@
             font-weight: bold;
         }
 
-        #message{
+        h4, .second-section{
             display: none;
+        }
+
+        .title-second-section{
+            padding-bottom: 30px;
+            border-bottom: 1px solid @color-light-gray;
+        }
+
+        select{
+            padding: 7px 5px;
+            width: 250px;
         }
 
         .content{
@@ -32,18 +45,7 @@
             }
         }
 
-        .title-second-section{
-            padding-bottom: 30px;
-            border-bottom: 1px solid #80808042;
-        }
-
-        select{
-            padding: 7px 5px;
-            width: 250px;
-        }
-
         .second-section{
-            display: none;
             margin: 50px 0px;
 
             .strip{
@@ -51,7 +53,7 @@
             }
 
             table tbody th, table tbody td {
-                color: #000;
+                color: @color-black;
             }
 
             .dataTables_wrapper .dataTables_length, 
@@ -66,7 +68,7 @@
                 display: flex;
                 width: 450px;
                 padding: 20px;
-                border: 3px solid #80808049;
+                border: 3px solid @color-light-gray;
                 border-radius: 15px;
 
                 img{
@@ -75,40 +77,43 @@
                     border-radius: 50%;
                     padding: 3px;
                     border: 3px solid;
-                    border-bottom-color: #80808080;
-                    border-right-color: #80808080;
-                    border-left-color: #8080802b;
-                    border-top-color: #8080802b;
+                    border-color: @color-light-gray @color-dark-gray @color-dark-gray @color-light-gray;
                     margin-right: 10px;
                 }
 
                 div{
                     padding: 0px 20px;
-                    border-left: 2px solid #8080805e;
+                    border-left: 2px solid @color-light-gray;
                     display: flex;
                     justify-content: center;
                     flex-direction: column;
                 }
 
-                #name-user{
+                > p:first-child{
                     font-size: 20px;
                     font-weight: bold;
                     line-height: 1;
                 }
 
-                #nickname-user{
+                > p:nth-child(2){
                    font-style: italic;
                    line-height: 1;
                 }
 
-                a{
-                    color: orange;
-                    font-size: 14px;
+                > p:nth-child(2):before{
+                    content: '(';
                 }
 
+                > p:nth-child(2):after{
+                    content: ')';
+                }
+
+                a{
+                    color: @color-orange;
+                    font-size: 14px;
+                }
             }
         }
-       
     }
 }
     
