@@ -1,0 +1,7 @@
+Manifest-Version: 1.0
+Content-Package-Roots: /apps/wknd/components/content,/content/dam/wknd
+ /en/site/AEM.png,/apps/wknd/clientlibs/clientlib-base,/content/wknd/u
+ s/en/onboarding/jcr:content/root/container/balvesba_component
+Content-Package-Type: mixed
+Content-Package-Id: my_packages:first-component:1.0.0
+

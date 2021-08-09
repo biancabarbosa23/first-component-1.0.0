@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<workspaceFilter version="1.0">
+    <filter root="/apps/wknd/clientlibs/clientlib-base"/>
+    <filter root="/apps/wknd/components/content"/>
+    <filter root="/content/wknd/us/en/onboarding/jcr:content/root/container/balvesba_component"/>
+    <filter root="/content/dam/wknd/en/site/AEM.png"/>
+</workspaceFilter>

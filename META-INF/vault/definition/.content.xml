@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:vlt="http://www.day.com/jcr/vault/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
+    jcr:created="{Date}2021-08-09T10:40:03.138-03:00"
+    jcr:createdBy="admin"
+    jcr:description=""
+    jcr:lastModified="{Date}2021-08-09T10:40:03.138-03:00"
+    jcr:lastModifiedBy="admin"
+    jcr:primaryType="vlt:PackageDefinition"
+    buildCount="1"
+    builtWith="Adobe Experience Manager-6.5.0"
+    group="my_packages"
+    lastUnwrapped="{Date}2021-08-09T10:40:03.138-03:00"
+    lastUnwrappedBy="admin"
+    lastWrapped="{Date}2021-08-09T10:40:03.138-03:00"
+    lastWrappedBy="admin"
+    name="first-component"
+    version="1.0.0">
+    <filter jcr:primaryType="nt:unstructured">
+        <f0
+            jcr:primaryType="nt:unstructured"
+            mode="replace"
+            root="/apps/wknd/clientlibs/clientlib-base"
+            rules="[]"/>
+        <f1
+            jcr:primaryType="nt:unstructured"
+            mode="replace"
+            root="/apps/wknd/components/content"
+            rules="[]"/>
+        <f2
+            jcr:primaryType="nt:unstructured"
+            mode="replace"
+            root="/content/wknd/us/en/onboarding/jcr:content/root/container/balvesba_component"
+            rules="[]"/>
+        <f3
+            jcr:primaryType="nt:unstructured"
+            mode="replace"
+            root="/content/dam/wknd/en/site/AEM.png"
+            rules="[]"/>
+    </filter>
+</jcr:root>

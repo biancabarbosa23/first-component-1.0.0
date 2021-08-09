@@ -1,0 +1,114 @@
+.balvesba-component {
+    @color-white: #fff;
+    
+    .container {
+        padding: .5rem 2rem;
+
+        h1, h2, h3, h4, p{
+            color: inherit !important;
+            text-align: left;
+        }
+
+        h1{
+            font-weight: bolder;
+        }
+
+        h2{
+            font-weight: bold;
+        }
+
+        #message{
+            display: none;
+        }
+
+        .content{
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+
+            aside{
+                padding: 0 10px;
+                margin: 0 10px;
+            }
+        }
+
+        .title-second-section{
+            padding-bottom: 30px;
+            border-bottom: 1px solid #80808042;
+        }
+
+        select{
+            padding: 7px 5px;
+            width: 250px;
+        }
+
+        .second-section{
+            display: none;
+            margin: 50px 0px;
+
+            .strip{
+                margin-top: 30px;
+            }
+
+            table tbody th, table tbody td {
+                color: #000;
+            }
+
+            .dataTables_wrapper .dataTables_length, 
+            .dataTables_wrapper .dataTables_filter, 
+            .dataTables_wrapper .dataTables_info, 
+            .dataTables_wrapper .dataTables_processing, 
+            .dataTables_wrapper .dataTables_paginate{
+                color: inherit !important;
+            }
+
+            .user-profile{
+                display: flex;
+                width: 450px;
+                padding: 20px;
+                border: 3px solid #80808049;
+                border-radius: 15px;
+
+                img{
+                    width: 150px;
+                    height: auto;
+                    border-radius: 50%;
+                    padding: 3px;
+                    border: 3px solid;
+                    border-bottom-color: #80808080;
+                    border-right-color: #80808080;
+                    border-left-color: #8080802b;
+                    border-top-color: #8080802b;
+                    margin-right: 10px;
+                }
+
+                div{
+                    padding: 0px 20px;
+                    border-left: 2px solid #8080805e;
+                    display: flex;
+                    justify-content: center;
+                    flex-direction: column;
+                }
+
+                #name-user{
+                    font-size: 20px;
+                    font-weight: bold;
+                    line-height: 1;
+                }
+
+                #nickname-user{
+                   font-style: italic;
+                   line-height: 1;
+                }
+
+                a{
+                    color: orange;
+                    font-size: 14px;
+                }
+
+            }
+        }
+       
+    }
+}
+    

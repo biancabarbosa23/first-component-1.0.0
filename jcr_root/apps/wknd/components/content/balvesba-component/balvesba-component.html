@@ -1,0 +1,65 @@
+<!--/*
+    Copyright 2015 Adobe Systems Incorporated
+  
+    Licensed under the Apache License, Version 2.0 (the "License");
+    you may not use this file except in compliance with the License.
+    You may obtain a copy of the License at
+  
+        http://www.apache.org/licenses/LICENSE-2.0
+  
+    Unless required by applicable law or agreed to in writing, software
+    distributed under the License is distributed on an "AS IS" BASIS,
+    WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+    See the License for the specific language governing permissions and
+    limitations under the License.
+*/-->
+
+<div class="container" style="background-color: ${properties.background != 'dark-theme' ? properties.background  : '#000' @ context='styleString'}; 
+    color: ${properties.background != 'dark-theme' ? '#000' : '#ffff' @ context='styleString'};">
+    <h1>${properties.title || "Bianca's First Component"}</h1>
+    <h2 data-sly-test="${properties.subtitle}">${properties.subtitle}</h2>
+    <div class="content"
+        style="flex-direction: ${properties.imagePosition == 'left' ? 'row'  : 'row-reverse' @ context='styleString'};">
+        <aside data-sly-test="${properties.hideImage == 'false'}"
+            style="background-color: ${properties.background != 'dark-theme' ? 'transparent'  : '#ffff' @ context='styleString'};">
+            <img src="${properties.fileReference}" />
+        </aside>
+        <section data-sly-test="${properties.description}">
+            ${properties.description @ context='html'}
+        </section>
+    </div>
+    <h2 class="title-second-section" data-sly-test="${properties.secondStep}">${properties.secondStep}</h2>
+    <select id="github-users" name="github-users">
+        <option selected="selected" value="">Selecione um usuário</option>
+        <sly data-sly-use.options="${'clientlibs/js/users.js' @ multifieldName='githubUsers'}">
+            <sly data-sly-list="${options}">
+                <option value="${item.properties.user}">${item.properties.user}</option>
+            </sly>
+        </sly>
+    </select>
+    <div class="second-section">
+        <h3>User Profile</h3>
+            <div class="user-profile">
+                <img id="avatar-user" src="" />
+                <div>
+                    <p id="name-user"></p>
+                    <p id="nickname-user"></p>
+                    <a id="url-user" href="#"></a>
+                </div>
+            </div>
+        <h3>User Repositories</h3>
+        <div class="container-table" >
+            <table id="table-repositories" class="stripe" style="width:100%">
+                <thead>
+                    <tr>
+                        <th>Name</th>
+                        <th>Description</th>
+                        <th>Language</th>
+                        <th>Url</th>
+                    </tr>
+                </thead>
+            </table>
+        </div>
+    </div>
+    <h4 id="message"></h4>
+</div>

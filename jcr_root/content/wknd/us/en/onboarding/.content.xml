@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
+    jcr:primaryType="cq:Page">
+    <jcr:content
+        cq:lastModified="{Date}2021-08-09T10:31:47.689-03:00"
+        cq:lastModifiedBy="admin"
+        cq:template="/conf/wknd/settings/wcm/templates/content-page-template"
+        jcr:primaryType="cq:PageContent"
+        jcr:title="Onboarding"
+        sling:resourceType="wknd/components/page">
+        <root
+            jcr:primaryType="nt:unstructured"
+            sling:resourceType="wknd/components/container"
+            layout="responsiveGrid">
+            <container
+                cq:styleIds="[1554340406437]"
+                jcr:lastModified="{Date}2021-08-04T16:58:23.136-03:00"
+                jcr:lastModifiedBy="admin"
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="wknd/components/container">
+                <balvesba_component
+                    jcr:created="{Date}2021-08-02T09:58:34.416-03:00"
+                    jcr:createdBy="admin"
+                    jcr:lastModified="{Date}2021-08-09T10:31:47.675-03:00"
+                    jcr:lastModifiedBy="admin"
+                    jcr:primaryType="nt:unstructured"
+                    sling:resourceType="wknd/components/content/balvesba-component"
+                    background="transparent"
+                    description="&lt;p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi porttitor elit lorem, id cursus dolor laoreet sollicitudin. &lt;b>Aliquam turpis augue, malesuada quis massa sit amet, mattis placerat diam.&lt;/b> Fusce tincidunt purus lacus, et pharetra lectus rutrum id. Nam purus nunc, consequat ut urna at, molestie placerat orci. &lt;i>Nulla tempus ornare condimentum. Nam efficitur magna ac volutpat lacinia.&lt;/i> Pellentesque ac dolor metus. Praesent sit amet ornare nisl.&lt;/p>&#xd;&#xa;"
+                    fileReference="/content/dam/wknd/en/site/AEM.png"
+                    hideImage="false"
+                    imagePosition="left"
+                    secondStep="Integrations with Github API and DataTable plugin"
+                    subtitle="This is the first component I created after my onboarding"
+                    textIsRich="true"
+                    title=" My First AEM Component"
+                    user="biancabarbosa23">
+                    <githubUsers jcr:primaryType="nt:unstructured">
+                        <item0
+                            jcr:primaryType="nt:unstructured"
+                            user="biancabarbosa23"/>
+                        <item1
+                            jcr:primaryType="nt:unstructured"
+                            user="junior-apostolo"/>
+                        <item2
+                            jcr:primaryType="nt:unstructured"
+                            user="lucasmoraessouza"/>
+                        <item3
+                            jcr:primaryType="nt:unstructured"
+                            user="testando user"/>
+                        <item4
+                            jcr:primaryType="nt:unstructured"
+                            user="aditineemkar"/>
+                        <item5
+                            jcr:primaryType="nt:unstructured"
+                            user="edesonazevedo"/>
+                    </githubUsers>
+                </balvesba_component>
+            </container>
+        </root>
+    </jcr:content>
+</jcr:root>
